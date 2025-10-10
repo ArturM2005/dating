@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package analytics;
+option go_package = "github.com/example/analytics/proto;proto";
+
+service Analyzer {
+    rpc GetUserScore (UserRequest) returns (UserScore);
+}
+
+message UserRequest {
+    int64 user_id = 1;
+}
+
+message UserScore {
+    double score = 1;
+}
